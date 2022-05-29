@@ -1,0 +1,8 @@
+pyproject.toml
+setup.cfg
+harmless.egg-info/PKG-INFO
+harmless.egg-info/SOURCES.txt
+harmless.egg-info/dependency_links.txt
+harmless.egg-info/entry_points.txt
+harmless.egg-info/requires.txt
+harmless.egg-info/top_level.txt

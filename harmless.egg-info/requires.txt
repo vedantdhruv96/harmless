@@ -1,0 +1,9 @@
+numpy
+h5py
+psutil
+scipy
+matplotlib
+click
+
+[interactive]
+jupyter

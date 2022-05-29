@@ -1,0 +1,11 @@
+Metadata-Version: 2.1
+Name: harmless
+Version: 1.0.0
+Summary: Python tools to perform reductions on HARM data products
+Author: Vedant Dhruv
+Author-email: vdhruv2@illinois.edu
+License: BSD 3-Clause License
+Keywords: harm,analysis,grmhd
+Requires-Python: >=3.6
+Description-Content-Type: text/markdown
+Provides-Extra: interactive

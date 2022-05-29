@@ -1,0 +1,10 @@
+name: harmless
+channels: 
+  - conda-forge
+dependencies:
+  - numpy
+  - h5py
+  - psutil
+  - click
+  - scipy
+  - matplotlib

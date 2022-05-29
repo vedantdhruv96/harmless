@@ -1,0 +1,2 @@
+[console_scripts]
+write-grid = harmless.scripts.write_grid:main
