@@ -5,6 +5,6 @@ dependencies:
   - numpy
   - h5py
   - psutil
-  - click
   - scipy
   - matplotlib
+  - sphinx

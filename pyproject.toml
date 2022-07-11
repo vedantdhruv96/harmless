@@ -16,7 +16,8 @@ dependencies = [
   "scipy",
   "h5py",
   "matplotlib",
-  "psutil"
+  "psutil",
+  "sphinx"
 ]
 
 [project.optional-dependencies]
