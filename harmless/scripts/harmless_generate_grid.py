@@ -11,7 +11,7 @@ from harmless import grid
 @click.argument('a', nargs=1, default=0.9375, type=float)
 @click.argument('r_out', nargs=1, default=1000, type=float)
 def make_grid(coord_sys, n1, n2, n3, a, r_out):
-  pass
+  click.echo(coord_sys)
 
 if __name__ == "__main__":
   make_grid()

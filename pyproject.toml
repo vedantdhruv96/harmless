@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
+requires = ["setuptools >= 61.0.0", "setuptools-scm"]
 
 [project]
 name = "harmless"
@@ -25,4 +25,4 @@ dependencies = [
 interactive = ["jupyter"]
 
 [project.scripts]
-harmless-generate-grid = "harmless.scripts.harmless_generate_grid:main"
+harmless-generate-grid = "harmless.scripts.harmless_generate_grid:make_grid"
