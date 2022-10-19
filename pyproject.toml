@@ -1,3 +1,28 @@
 [build-system]
-requires = ["setuptools"]
+requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "harmless"
+version = "1.0.0"
+description = "Python tools to perform reductions on HARM data products"
+readme = "README.md"
+keywords = ["harm", "analysis", "grmhd"]
+authors = [{name="Vedant Dhruv", email="vdhruv2@illinois.edu"}]
+license = { file="LICENSE" }
+requires-python = ">3.6"
+dependencies = [
+  "numpy",
+  "scipy",
+  "h5py",
+  "matplotlib",
+  "psutil",
+  "sphinx",
+  "click"
+]
+
+[project.optional-dependencies]
+interactive = ["jupyter"]
+
+[project.scripts]
+harmless-generate-grid = "harmless.scripts.harmless_generate_grid:main"

@@ -13,5 +13,5 @@ from harmless import grid
 def make_grid(coord_sys, n1, n2, n3, a, r_out):
   pass
 
-if __name__ == '__main__':
+if __name__ == "__main__":
   make_grid()
