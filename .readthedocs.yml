@@ -13,6 +13,5 @@ formats: []
 python:
   version: 3.6
   install:
-     - method: flit
        path: .
   system_packages: true
