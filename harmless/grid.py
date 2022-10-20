@@ -11,4 +11,4 @@ class Grid:
   Attributes
   
   """
-  def sa
+  
