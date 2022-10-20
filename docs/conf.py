@@ -12,7 +12,7 @@
 #
 import os
 import sys
-sys.path.insert(0, os.path.abspath('../../harmless/'))
+sys.path.insert(0, os.path.abspath('../harmless/'))
 
 
 # -- Project information -----------------------------------------------------
