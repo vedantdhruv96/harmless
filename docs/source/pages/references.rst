@@ -14,3 +14,10 @@ Grid
 ~~~~
 
 .. autoclass:: Grid
+
+.. currentmodule:: harmless.scripts.kharma_convert
+
+kharma_convert.convert
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: convert

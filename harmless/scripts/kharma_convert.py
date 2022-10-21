@@ -12,9 +12,9 @@ from harmless import parallelize as par
 def convert(dumspdir, outputdir, resume, single_file, do_parallel, nthreads):
   """Wrapper over convert_dump. Launches a single process or several based on the value of do_parallel
 
-  :param dumspdir: Location of native KHARMA fluid dumps (*.phdf). Enter absolute path to correctly parse the path.
+  :param dumspdir: Location of native KHARMA fluid dumps (.phdf). Enter absolute path to correctly parse the path.
   :type dumspdir: str
-  :param outputdir: Location where the iharm-format fluid dumps (*.h5) will be stored. Enter absolute path to correctly parse the path.
+  :param outputdir: Location where the iharm-format fluid dumps (.h5) will be stored. Enter absolute path to correctly parse the path.
   :type outputdir: str
   :param resume: If set to True, will convert only those .phdf files that have not been convert to .h5 already.
   :type resume: bool
@@ -25,7 +25,7 @@ def convert(dumspdir, outputdir, resume, single_file, do_parallel, nthreads):
   :param nthreads: In the event the operation is being parallelized, how many child processes must be launched, or equivalently how many processes must be launched.
   :type nthreads: int
   """
-  
+  pass
 
-if__name__=="__main__":
+if __name__=="__main__":
   convert()
