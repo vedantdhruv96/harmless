@@ -3,14 +3,14 @@ References
 
 .. module:: harmless.scripts.generate_grid
 
-generate-grid
-~~~~~~~~~~~~~
+generate_grid.make_grid
+~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autofunction:: make_grid
 
 .. module:: harmless.grid
 
-Grid
-~~~~
+grid.Grid
+~~~~~~~~~
 
 .. autoclass:: Grid

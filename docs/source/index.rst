@@ -13,7 +13,7 @@ Welcome to harmless's documentation!
 References
 ==========
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 3
 
    pages/references
 
