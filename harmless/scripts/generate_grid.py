@@ -24,20 +24,32 @@ def make_grid(coord_sys, n1, n2, n3, a, r_out, x1min, x2min, x3min, x1max, x2max
 
   x1min, x1max, ... will be considered only if the coordinate system is 'cartesian' or 'minkowski'.
 
-  Arguments:
-
-  \b
-    coord_sys (STRING): The simulation coordinate system {minkoski, cartesian, eks, mks, fmks; DEFAULT: fmks}
-  \b
-    n1 (INT)          : Number of physical zones along X1 {DEFAULT: 384}
-  \b
-    n2 (INT)          : Number of physical zones along X2 {DEFAULT: 192}
-  \b
-    n3 (INT)          : Number of physical zones along X3 {DEFAULT: 192}
-  \b
-    a (FLOAT)         : Black hole spin {DEFAULT: 0.9375}
-  \b
-    r_out (FLOAT)     : Outer radius of simulation domain {DEFAULT: 1000}
+  :param coord_sys: The simulation coordinate system {minkoski, cartesian, eks, mks, fmks}, defaults to fmks
+  :type coord_sys: string
+  :param n1: Number of physical zones along X1, defaults to 384
+  :type n1: int
+  :param n2: Number of physical zones along X2, defaults to 192
+  :type n2: int
+  :param n3: Number of physical zones along X3, defaults to 192
+  :type n3: int
+  :param a: Black hole spin, defaults to 0.9375
+  :type a: float
+  :param r_out: Outer radius of simulation domain, defaults to 1000.
+  :type r_out: float
+  :param x1min: X1 coordinate of first physical zone, defaults to 0.0
+  :type x1min: float
+  :param x2min: X2 coordinate of first physical zone, defaults to 0.0
+  :type x2min: float
+  :param x3min: X3 coordinate of first physical zone, defaults to 0.0
+  :type x3min: float
+  :param x1max: X1 coordinate of last physical zone, defaults to 1.0
+  :type x1max: float
+  :param x2max: X2 coordinate of last physical zone, defaults to 1.0
+  :type x2max: float
+  :param x3max: X3 coordinate of last physical zone, defaults to 1.0
+  :type x3max: float
+  :param fname: Output file name, enter absolute path, defaults to $PWD/grid.h5
+  :type fname: string
   """
   click.echo(f"Generating {coord_sys} grid of size {n1}x{n2}x{n3} for spin {a} with r_out={r_out}")
   grid_file = grid.Grid(coord_sys, n1, n2, n3, a, r_out, x1min, x2min, x3min, x1max, x2max, x3max)
