@@ -17,7 +17,7 @@ dependencies = [
   "h5py",
   "matplotlib",
   "psutil",
-  "sphinx",
+  "sphinx>=4.2.0",
   "click"
 ]
 
