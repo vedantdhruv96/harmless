@@ -20,9 +20,7 @@ from harmless import grid, io
 def make_grid(coord_sys, n1, n2, n3, a, r_out, x1min, x2min, x3min, x1max, x2max, x3max, fname):
   """This function creates a grid file (grid.h5) and stores it in a user provided location. 
   If no location is provided, it defaults to saving the grid file in the location the script
-  is executed from.
-
-  x1min, x1max, ... will be considered only if the coordinate system is 'cartesian' or 'minkowski'.
+  is executed from. x1min, x1max, ... will be considered only if the coordinate system is 'cartesian' or 'minkowski'.
 
   :param coord_sys: The simulation coordinate system {minkoski, cartesian, eks, mks, fmks}, defaults to fmks
   :type coord_sys: string
@@ -49,7 +47,7 @@ def make_grid(coord_sys, n1, n2, n3, a, r_out, x1min, x2min, x3min, x1max, x2max
   :param x3max: X3 coordinate of last physical zone, defaults to 1.0
   :type x3max: float
   :param fname: Output file name, enter absolute path, defaults to $PWD/grid.h5
-  :type fname: string
+  :type fname: str
   """
   click.echo(f"Generating {coord_sys} grid of size {n1}x{n2}x{n3} for spin {a} with r_out={r_out}")
   grid_file = grid.Grid(coord_sys, n1, n2, n3, a, r_out, x1min, x2min, x3min, x1max, x2max, x3max)

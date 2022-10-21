@@ -3,8 +3,8 @@ References
 
 .. module:: harmless.scripts.generate_grid
 
-generate_grid.make_grid
-~~~~~~~~~~~~~~~~~~~~~~~
+scripts.generate_grid.make_grid
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. autofunction:: make_grid
 
