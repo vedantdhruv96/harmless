@@ -8,8 +8,14 @@ Welcome to harmless's documentation!
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
+   
 
+References
+==========
+.. toctree::
+   :maxdepth: 1
+
+   pages/references
 
 
 Indices and tables
