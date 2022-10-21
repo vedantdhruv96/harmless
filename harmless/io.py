@@ -1,6 +1,9 @@
 import h5py
 import numpy as np
 
+def load_dump():
+  pass
+
 def write_grid(G, fname):
   """Save the grid object
 

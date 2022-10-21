@@ -25,4 +25,5 @@ dependencies = [
 interactive = ["jupyter"]
 
 [project.scripts]
-harmless-generate-grid = "harmless.scripts.generate_grid:make_grid"
+harmless-generate-grid  = "harmless.scripts.generate_grid:make_grid"
+harmless-kharma-convert = "harmless.scripts.kharma_convert:convert"
