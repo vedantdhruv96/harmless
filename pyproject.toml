@@ -6,7 +6,7 @@ requires = ["flit_core >=3.2"]
 name = "harmless"
 version = "1.0.0"
 description = "Python tools to perform reductions on HARM data products"
-readme = "README.md"
+readme = "README.rst"
 keywords = ["harm", "analysis", "grmhd"]
 authors = [{name="Vedant Dhruv", email="vdhruv2@illinois.edu"}]
 license = { file="LICENSE" }
