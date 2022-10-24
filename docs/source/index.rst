@@ -8,7 +8,8 @@ Welcome to harmless's documentation!
 
 .. toctree::
    :maxdepth: 2
-   
+
+   pages/readme   
 
 References
 ==========
