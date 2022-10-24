@@ -19,3 +19,9 @@ Grid
 
 .. automodule:: harmless.scripts.generate_grid
   :members:
+
+I/O
+~~~
+
+.. automodule:: harmless.io
+  :members:
