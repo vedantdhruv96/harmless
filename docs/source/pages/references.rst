@@ -1,12 +1,12 @@
 References
 ==========
 
-.. currentmodule:: harmless.scripts.generate_grid
+.. automodule:: harmless.scripts.generate_grid
+  :members:
 
-generate_grid.make_grid
-~~~~~~~~~~~~~~~~~~~~~~~
+.. automodule:: harmless.scripts.kharma_convert
+  :members:
 
-.. autofunction:: make_grid
 
 .. currentmodule:: harmless.grid
 
@@ -15,9 +15,3 @@ Grid
 
 .. autoclass:: Grid
 
-.. currentmodule:: harmless.scripts.kharma_convert
-
-kharma_convert.convert
-~~~~~~~~~~~~~~~~~~~~~~
-
-.. autofunction:: convert
