@@ -8,10 +8,9 @@ References
   :members:
 
 
-.. currentmodule:: harmless.grid
-
 Grid
 ~~~~
 
-.. autoclass:: Grid
+.. automodule:: harmless.grid
+  :members:
 
