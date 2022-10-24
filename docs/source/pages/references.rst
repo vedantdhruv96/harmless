@@ -25,3 +25,6 @@ I/O
 
 .. automodule:: harmless.io
   :members:
+
+.. automodule:: harmless.grid
+  :members:
