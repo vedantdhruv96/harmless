@@ -6,13 +6,13 @@ def load_dump():
   pass
 
 def write_grid(G, fname):
-  '''Save the grid object
+  """Save the grid object
 
   :param G: The grid object
-  :type G: class:`harmless.grid.Grid`
+  :type G: ``harmless.grid.Grid``
   :param fname: Grid filename
   :type fname: str
-  '''
+  """
   gfile = h5py.File(fname, 'w')
   if (G.coord_sys == 'cartesian') or (G.coord_sys == 'minkowski'):
     gfile['X'] = G.x1
