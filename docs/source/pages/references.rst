@@ -17,11 +17,14 @@ Grid
 .. autoclass:: harmless.grid.Grid
   :members:
 
-.. automodule:: harmless.scripts.generate_grid
-  :members:
-
 I/O
 ~~~
 
 .. automodule:: harmless.io
+  :members:
+
+Parallelize operations
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. automodule:: harmless.parallelize
   :members:
