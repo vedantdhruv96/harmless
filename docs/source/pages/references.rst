@@ -1,16 +1,17 @@
 References
 ==========
 
-.. automodule:: harmless.scripts.generate_grid
-  :members:
+generate_grid.make_grid
+~~~~~~~~~~~~~~~~~~~~~~~
 
-.. automodule:: harmless.scripts.kharma_convert
-  :members:
-
+.. autofunction:: harmless.scripts.generate_grid.make_grid
 
 Grid
 ~~~~
 
-.. automodule:: harmless.grid
-  :members:
+.. autoclass:: harmless.grid.Grid
 
+kharma_convert.convert
+~~~~~~~~~~~~~~~~~~~~~~
+
+.. autofunction:: harmless.scripts.kharma_convert.convert
