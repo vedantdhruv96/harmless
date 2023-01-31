@@ -1,11 +1,26 @@
 import click, glob, os
 from harmless import io
 from harmless import parallelize as par
+from harmless import fluid
+
+def convert_dump(files):
+  """Converts native KHARMA output to iharm format.
+
+  :param files: Files paired like ('kharma_format_file', 'iharm_format_file')
+  :type files: list
+  """
+  kharma_filename = files[0]
+  iharm_filename  = files[1]
+
+  click.echo(f"Converting {kharma_filename}")
+  dump = fluid.FluidDump(kharma_filename, derived=None)
+  io.write_dump(fluid_dump, iharm_filename)
+
 
 @click.command()
 @click.option('-p', '--dumpsdir', default=None, help="Location of *.phdf file(s). Enter absolute path. If a single file is being converted, this will be the file name.")
 @click.option('-o', '--outputdir', default=None, help="Location of converted *.h5 file(s). Enter absolute path.")
-@click.option('-s', '--single_file', default=True, help="Are you converting just one file. Then the operation won't be parallelized even if asked to")
+@click.option('-s', '--single_file', default=True, help="Are you converting just one file? Then the operation won't be parallelized even if asked to")
 @click.option('-do_parallel', '--do_parallel', default=False, help="Parallelize the operation")
 @click.option('-nthreads', '--nthreads', default=1, help="Number of threads/processes if the operation is parallelized")
 @click.option('-pad', '--pad', default=0.4, help="Pad number of threads launched to avoid OOM")

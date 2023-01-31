@@ -2,7 +2,7 @@ import h5py
 import numpy as np
 
 
-def load_dump():
+def write_dump():
   pass
 
 def write_grid(G, fname):
