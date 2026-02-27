@@ -89,11 +89,13 @@ class Grid:
         defaults to 1000.0
         :type r_out: float
 
-        :param {x1min,x2min,x3min}: Coordinates of first physical zone along X1, X2 and X3 respectively,
+        :param {x1min,x2min,x3min}: Coordinates of first physical zone
+        along X1, X2 and X3 respectively,
         defaults to {0.0,0.0,0.0}
         :type {x1min,x2min,x3min}: float
 
-        :param {x1max,x2max,x3max}: Coordinates of last physical zone along X1, X2 and X3 respectively,
+        :param {x1max,x2max,x3max}: Coordinates of last physical zone
+        along X1, X2 and X3 respectively,
         defaults to {1.0,1.0,1.0}
         :type {x1max,x2max,x3max}: float
         """
@@ -212,7 +214,9 @@ class Grid:
         return gcov_ks
 
     def dxdX(self):
-        """Generates the transformation matrix to transform covariant metric from KS to native coordinates."""
+        """Generates the transformation matrix to transform covariant
+        metric from KS to native coordinates.
+        """
         dxdX = np.zeros((self.n1, self.n2, self.n3, 4, 4), dtype=float)
 
         if self.coord_sys == "eks":

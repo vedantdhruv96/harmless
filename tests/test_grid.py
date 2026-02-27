@@ -122,7 +122,8 @@ class TestGridHelpers:
         assert vcon.shape == (4, 4, 4, 4)
 
     def test_lower_then_raise_is_identity(self, small_cartesian_grid):
-        # Use Cartesian (Minkowski) grid: gcon = gcov = diag(-1,1,1,1), trivially exact inverse
+        # Use Cartesian (Minkowski) grid: gcon = gcov = diag(-1,1,1,1),
+        # trivially exact inverse
         G = small_cartesian_grid
         rng = np.random.default_rng(42)
         vcon = rng.random((4, 4, 4, 4))

@@ -23,7 +23,10 @@ def convert_dump(files):
     "-p",
     "--dumpsdir",
     default=None,
-    help="Location of *.phdf file(s). Enter absolute path. If a single file is being converted, this will be the file name.",
+    help=(
+        "Location of *.phdf file(s). Enter absolute path. "
+        "If a single file is being converted, this will be the file name."
+    ),
 )
 @click.option(
     "-o",
@@ -35,7 +38,10 @@ def convert_dump(files):
     "-s",
     "--single_file",
     default=True,
-    help="Are you converting just one file? Then the operation won't be parallelized even if asked to",
+    help=(
+        "Are you converting just one file? Then the operation "
+        "won't be parallelized even if asked to."
+    ),
 )
 @click.option(
     "-do_parallel", "--do_parallel", default=False, help="Parallelize the operation"
@@ -50,22 +56,29 @@ def convert_dump(files):
     "-pad", "--pad", default=0.4, help="Pad number of threads launched to avoid OOM"
 )
 def convert(dumpsdir, outputdir, single_file, do_parallel, nthreads, pad):
-    """Wrapper over convert_dump. Launches a single process or several based on the value of do_parallel. Runs on a single node nevertheless. This is fine because it's a one-off process.
+    """Wrapper over convert_dump. Launches a single process or several based on
+    the value of do_parallel. Runs on a single node. This is fine because it's
+    a one-off process.
 
-    :param dumpsdir: Location of native KHARMA fluid dumps (.phdf). Enter absolute path to correctly parse the path.
+    :param dumpsdir: Location of native KHARMA fluid dumps (.phdf). Enter
+        absolute path to correctly parse the path.
     :type dumpsdir: str
 
-    :param outputdir: Location where the iharm-format fluid dumps (.h5) will be stored. Enter absolute path to correctly parse the path.
+    :param outputdir: Location where the iharm-format fluid dumps (.h5) will
+        be stored. Enter absolute path to correctly parse the path.
     :type outputdir: str
 
-    :param single_file: If set to true, the code expects only a single dump file to be converted. Doesn't parallelize the code.
+    :param single_file: If set to true, the code expects only a single dump
+        file to be converted. Doesn't parallelize the code.
     :type single_file: bool
 
     :param do_parallel: Should the operation be parallelized?
     :type do_parallel: bool
 
-    :param nthreads: In the event the operation is being parallelized, how many child processes must be launched, or equivalently how many processes must be launched.
-    If you get a OOM, reduce the padding `pad` which equivalently reduces the number of threads.
+    :param nthreads: In the event the operation is being parallelized, how
+        many child processes must be launched, or equivalently how many
+        processes must be launched. If you get an OOM, reduce the padding
+        ``pad`` which equivalently reduces the number of threads.
     :type nthreads: int
 
     :param pad: Padding provided to control number of threads launched.
@@ -79,10 +92,12 @@ def convert(dumpsdir, outputdir, single_file, do_parallel, nthreads, pad):
         click.echo(f"{dumpsdir} doesn't exist. Check again. Aborting!")
         return
 
-    # If outputdir is not provided, let the user know that the converted file(s) will be stored in the same location as the original files
+    # If outputdir is not provided, let the user know that the
+    # converted file(s) will be stored in the same location as the original files
     if outputdir is None:
         click.echo(
-            f"No output directory provided, will store converted files in the same location as {dumpsdir}"
+            "No output directory provided, will store converted "
+            f"files in the same location as {dumpsdir}"
         )
         outputdir = dumpsdir
     # Check if the location where .h5 files are to be stored exists. If not, make it.
@@ -105,7 +120,8 @@ def convert(dumpsdir, outputdir, single_file, do_parallel, nthreads, pad):
                 nthreads = nthreads_max
         else:
             click.echo(
-                f"do_parallel was set to {do_parallel}. Hence, launching just a single thread."
+                f"do_parallel was set to {do_parallel}. "
+                "Hence, launching just a single thread."
             )
             nthreads = 1
 

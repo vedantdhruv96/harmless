@@ -81,7 +81,8 @@ diagnostic_dict = {
 
 
 def calc_q(dump):
-    """Compute heat flux q from qtilde. Applies EMHD higher-order correction when enabled.
+    """Compute heat flux q from qtilde. Applies EMHD higher-order
+    correction when enabled.
 
     :param dump: Fluid dump
     :type dump: :class:`harmless.fluid.FluidDump`
@@ -98,7 +99,8 @@ def calc_q(dump):
 
 
 def calc_dP(dump):
-    """Compute viscous pressure anisotropy dP from dPtilde. Applies EMHD higher-order correction when enabled.
+    """Compute viscous pressure anisotropy dP from dPtilde. Applies
+    EMHD higher-order correction when enabled.
 
     :param dump: Fluid dump
     :type dump: :class:`harmless.fluid.FluidDump`
@@ -601,7 +603,8 @@ def calc_TPAKE(dump, G, indices=None):
     Returns T_total^mu_nu minus the thermal pressure part T_thermal^mu_nu.
     This is the Poynting-And-Kinetic-Energy combination.
 
-    When ``indices=(1,3)`` this gives the r-phi component (angular momentum flux density).
+    When ``indices=(1,3)`` this gives the r-phi component
+    (angular momentum flux density).
 
     :param dump: Fluid dump
     :type dump: :class:`harmless.fluid.FluidDump`

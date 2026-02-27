@@ -63,11 +63,14 @@ from harmless import grid, io
 def make_grid(
     coord_sys, n1, n2, n3, a, r_out, x1min, x2min, x3min, x1max, x2max, x3max, fname
 ):
-    """This function creates a grid file (grid.h5) and stores it in a user provided location.
-    If no location is provided, it defaults to saving the grid file in the location the script
-    is executed from. x1min, x1max, ... will be considered only if the coordinate system is 'cartesian' or 'minkowski'.
+    """This function creates a grid file (grid.h5) and stores it in a
+    user-provided location. If no location is provided, it defaults to
+    saving the grid file in the location the script is executed from.
+    x1min, x1max, ... will be considered only if the coordinate system
+    is 'cartesian' or 'minkowski'.
 
-    :param coord_sys: The simulation coordinate system {minkoski, cartesian, eks, mks, fmks}, defaults to fmks
+    :param coord_sys: The simulation coordinate system
+        {minkoski, cartesian, eks, mks, fmks}, defaults to fmks
     :type coord_sys: string
 
     :param n1: Number of physical zones along X1, defaults to 384
@@ -107,7 +110,8 @@ def make_grid(
     :type fname: str
     """
     click.echo(
-        f"Generating {coord_sys} grid of size {n1}x{n2}x{n3} for spin {a} with r_out={r_out}"
+        f"Generating {coord_sys} grid of size {n1}x{n2}x{n3} "
+        f"for spin {a} with r_out={r_out}"
     )
     grid_file = grid.Grid(
         coord_sys, n1, n2, n3, a, r_out, x1min, x2min, x3min, x1max, x2max, x3max

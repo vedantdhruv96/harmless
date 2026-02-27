@@ -20,9 +20,11 @@ def calc_threads(pad=0.4):
 
 
 def run_parallel(function, files, nthreads):
-    """Calls `function` for each element of the iterator `files`. `nthreads` sets the number of worker processes spawned at a time.
+    """Calls ``function`` for each element of the iterator ``files``.
+    ``nthreads`` sets the number of worker processes spawned at a time.
 
-    :param function: The function that is to be executed over each element of the iterator
+    :param function: The function that is to be executed over each
+        element of the iterator
     :type function: function
 
     :param files: The iterator that contains the data to be looped over

@@ -7,8 +7,11 @@ __all__ = ["FluidDump"]
 
 class FluidDump:
     """Fluid dump class
-    Stores only the most relevant data by default- time, number of zones and starting values, adiabatic index, and primitives and if electrons/conduction/viscosity was enabled.
-    Any additional (derived) quantites (eg: ucon, bcon, mdot, etc..) need to be provided using the `derived` dict
+    Stores only the most relevant data by default- time, number of zones
+    and starting values, adiabatic index, and primitives and if
+    electrons/conduction/viscosity was enabled.
+    Any additional (derived) quantites (eg: ucon, bcon, mdot, etc..)
+    need to be provided using the `derived` dict
     """
 
     def __init__(self, fname, extras=None):

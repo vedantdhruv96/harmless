@@ -66,7 +66,9 @@ def small_mks_grid():
 
 @pytest.fixture(scope="module")
 def small_fmks_grid():
-    """A small FMKS Grid for fast testing. n1=8 for the same reason as small_eks_grid."""
+    """A small FMKS Grid for fast testing.
+    n1=8 for the same reason as small_eks_grid.
+    """
     return Grid(
         "fmks",
         8,
