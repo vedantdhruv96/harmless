@@ -1,4 +1,5 @@
 """Tests for harmless.grid."""
+
 import numpy as np
 import pytest
 from harmless.grid import Grid, lower_vec, raise_vec, dot_vec, inv_scalar
@@ -7,7 +8,7 @@ from harmless.grid import Grid, lower_vec, raise_vec, dot_vec, inv_scalar
 class TestGridCartesian:
     def test_construction(self, small_cartesian_grid):
         G = small_cartesian_grid
-        assert G.coord_sys == 'cartesian'
+        assert G.coord_sys == "cartesian"
         assert G.n1 == G.n2 == G.n3 == 4
 
     def test_coordinate_shapes(self, small_cartesian_grid):
@@ -21,26 +22,26 @@ class TestGridCartesian:
         assert G.gcov.shape == (4, 4, 4, 4, 4)
         assert G.gcon.shape == (4, 4, 4, 4, 4)
         # gdet is set to scalar 1. in cartesian() — just check value, not shape
-        assert G.gdet == pytest.approx(1.)
+        assert G.gdet == pytest.approx(1.0)
         assert G.lapse.shape == (4, 4, 4)
 
     def test_cartesian_metric_is_minkowski(self, small_cartesian_grid):
         G = small_cartesian_grid
         # Diagonal should be (-1, 1, 1, 1) everywhere
-        assert G.gcov[0, 0, 0, 0, 0] == pytest.approx(-1.)
-        assert G.gcov[0, 0, 0, 1, 1] == pytest.approx(1.)
-        assert G.gcov[0, 0, 0, 2, 2] == pytest.approx(1.)
-        assert G.gcov[0, 0, 0, 3, 3] == pytest.approx(1.)
+        assert G.gcov[0, 0, 0, 0, 0] == pytest.approx(-1.0)
+        assert G.gcov[0, 0, 0, 1, 1] == pytest.approx(1.0)
+        assert G.gcov[0, 0, 0, 2, 2] == pytest.approx(1.0)
+        assert G.gcov[0, 0, 0, 3, 3] == pytest.approx(1.0)
 
     def test_lapse_is_one_for_cartesian(self, small_cartesian_grid):
         G = small_cartesian_grid
-        assert np.all(G.lapse == pytest.approx(1.))
+        assert np.all(G.lapse == pytest.approx(1.0))
 
 
 class TestGridEKS:
     def test_construction(self, small_eks_grid):
         G = small_eks_grid
-        assert G.coord_sys == 'eks'
+        assert G.coord_sys == "eks"
 
     def test_metric_shapes(self, small_eks_grid):
         G = small_eks_grid
@@ -57,43 +58,54 @@ class TestGridEKS:
 
     def test_r_is_positive(self, small_eks_grid):
         G = small_eks_grid
-        assert np.all(G.r > 0.)
+        assert np.all(G.r > 0.0)
 
     def test_theta_in_range(self, small_eks_grid):
         G = small_eks_grid
-        assert np.all(G.th >= 0.) and np.all(G.th <= np.pi)
+        assert np.all(G.th >= 0.0) and np.all(G.th <= np.pi)
 
     def test_gdet_positive(self, small_eks_grid):
         G = small_eks_grid
-        assert np.all(G.gdet > 0.)
+        assert np.all(G.gdet > 0.0)
 
 
 class TestGridMKS:
     def test_construction(self, small_mks_grid):
         G = small_mks_grid
-        assert G.coord_sys == 'mks'
+        assert G.coord_sys == "mks"
 
     def test_gdet_positive(self, small_mks_grid):
         G = small_mks_grid
-        assert np.all(G.gdet > 0.)
+        assert np.all(G.gdet > 0.0)
 
 
 class TestGridFMKS:
     def test_construction(self, small_fmks_grid):
         G = small_fmks_grid
-        assert G.coord_sys == 'fmks'
+        assert G.coord_sys == "fmks"
 
     def test_gdet_positive(self, small_fmks_grid):
         G = small_fmks_grid
-        assert np.all(G.gdet > 0.)
+        assert np.all(G.gdet > 0.0)
 
 
 class TestGridInvalidCoordSys:
     def test_invalid_coord_sys_exits(self):
         with pytest.raises(SystemExit):
-            Grid('bogus', 4, 4, 4, a=0., r_out=100.,
-                 x1min=0., x2min=0., x3min=0.,
-                 x1max=1., x2max=1., x3max=1.)
+            Grid(
+                "bogus",
+                4,
+                4,
+                4,
+                a=0.0,
+                r_out=100.0,
+                x1min=0.0,
+                x2min=0.0,
+                x3min=0.0,
+                x1max=1.0,
+                x2max=1.0,
+                x3max=1.0,
+            )
 
 
 class TestGridHelpers:
@@ -125,6 +137,6 @@ class TestGridHelpers:
         assert result.shape == (4, 4, 4)
 
     def test_inv_scalar(self):
-        x = np.array([1., 2., 4.])
+        x = np.array([1.0, 2.0, 4.0])
         result = inv_scalar(x)
-        assert result == pytest.approx([1., 0.5, 0.25])
+        assert result == pytest.approx([1.0, 0.5, 0.25])
