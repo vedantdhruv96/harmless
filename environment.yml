@@ -10,4 +10,4 @@ dependencies:
   - sphinx>=4.2.0
   - click
   - pip:
-    - sphinx_rtd_theme==1.0.0
+    - furo

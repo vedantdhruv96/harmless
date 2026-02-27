@@ -11,12 +11,12 @@ Welcome to harmless's documentation!
 
    pages/readme   
 
-References
-==========
+API Reference
+=============
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 4
 
-   pages/references
+   api/harmless
 
 
 Indices and tables
