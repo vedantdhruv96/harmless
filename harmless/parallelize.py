@@ -1,6 +1,8 @@
 import multiprocessing as mp
 import psutil
 
+__all__ = ["calc_threads", "run_parallel"]
+
 def calc_threads(pad=0.4):
   """Compute the total number of threads / processes to launch based on,
   (i)  the total number of physical cores on a node

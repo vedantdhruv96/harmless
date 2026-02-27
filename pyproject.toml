@@ -10,19 +10,26 @@ readme = "README.rst"
 keywords = ["harm", "analysis", "grmhd"]
 authors = [{name="Vedant Dhruv", email="vdhruv2@illinois.edu"}]
 license = { file="LICENSE" }
-requires-python = ">3.6"
+requires-python = ">=3.8"
 dependencies = [
   "numpy",
   "scipy",
   "h5py",
   "matplotlib",
   "psutil",
-  "sphinx>=4.2.0",
-  "click"
+  "click>=8.0",
 ]
 
 [project.optional-dependencies]
 interactive = ["jupyter"]
+docs = [
+  "sphinx>=4.2.0",
+  "sphinx-rtd-theme",
+  "readthedocs-sphinx-search",
+]
+dev = [
+  "pytest",
+]
 
 [project.scripts]
 harmless-generate-grid  = "harmless.scripts.generate_grid:make_grid"

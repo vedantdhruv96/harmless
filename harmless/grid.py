@@ -1,6 +1,59 @@
 import os, sys
 import numpy as np
 
+__all__ = ["Grid", "lower_vec", "raise_vec", "dot_vec", "inv_scalar"]
+
+
+def lower_vec(vcon, G):
+  """Lower a contravariant 4-vector using the metric.
+
+  :param vcon: Contravariant 4-vector of shape (..., 4)
+  :type vcon: numpy.ndarray
+  :param G: Grid object providing gcov
+  :type G: :class:`Grid`
+  :return: Covariant 4-vector of shape (..., 4)
+  :rtype: numpy.ndarray
+  """
+  return np.einsum('...ij,...j->...i', G.gcov, vcon)
+
+
+def raise_vec(vcov, G):
+  """Raise a covariant 4-vector using the inverse metric.
+
+  :param vcov: Covariant 4-vector of shape (..., 4)
+  :type vcov: numpy.ndarray
+  :param G: Grid object providing gcon
+  :type G: :class:`Grid`
+  :return: Contravariant 4-vector of shape (..., 4)
+  :rtype: numpy.ndarray
+  """
+  return np.einsum('...ij,...j->...i', G.gcon, vcov)
+
+
+def dot_vec(vcov, vcon):
+  """Contract a covariant and contravariant 4-vector.
+
+  :param vcov: Covariant 4-vector of shape (..., 4)
+  :type vcov: numpy.ndarray
+  :param vcon: Contravariant 4-vector of shape (..., 4)
+  :type vcon: numpy.ndarray
+  :return: Scalar field
+  :rtype: numpy.ndarray
+  """
+  return np.einsum('...i,...i->...', vcov, vcon)
+
+
+def inv_scalar(x):
+  """Return the element-wise reciprocal of a scalar field.
+
+  :param x: Input array
+  :type x: numpy.ndarray
+  :return: 1/x
+  :rtype: numpy.ndarray
+  """
+  return 1. / x
+
+
 class Grid:
   """ A class to generate simulation grid
   Stores native coordinates, spherical and Cartesian coordinates (when applicable), 
@@ -34,6 +87,10 @@ class Grid:
     self.n1        = n1
     self.n2        = n2
     self.n3        = n3
+
+    _valid = ('cartesian', 'minkowski', 'eks', 'mks', 'fmks')
+    if self.coord_sys not in _valid:
+      sys.exit(f"Not a valid coordinate system '{coord_sys}'. Valid options: {_valid}")
 
     self.x1 = np.zeros((self.n1, self.n2, self.n3), dtype=float)
     self.x2 = np.zeros((self.n1, self.n2, self.n3), dtype=float)

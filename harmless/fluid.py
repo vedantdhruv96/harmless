@@ -1,5 +1,9 @@
 import os, glob, h5py, sys
 import numpy as np
+from harmless import diagnostics
+
+__all__ = ["FluidDump"]
+
 
 class FluidDump:
   """Fluid dump class
@@ -118,12 +122,20 @@ class FluidDump:
         sys.exit("Invalid list of 'extras' provided. Exiting!")
 
   def get_derived(self, var, G=None, components=None):
-    """Cmpute derived quantities. 
-    The list of possible keys are in `diagnostics`: `diagnotics_dict`.
+    """Compute a derived quantity.
+    The list of valid keys is in :data:`harmless.diagnostics.diagnostic_dict`.
 
-    :param var: Variable 'key'.
+    :param var: Variable key (e.g. 'pg', 'ucon', 'mdot')
     :type var: str
+    :param G: Grid object, required for metric-dependent quantities
+    :type G: :class:`harmless.grid.Grid`, optional
+    :param components: Tensor component tuple (mu, nu), or None for full array
+    :type components: tuple, optional
+    :return: Computed quantity
+    :raises KeyError: If var is not a recognised diagnostic key
     """
-
-    if [(var == key) for key in diagnostics_dict.keys()]:
-      diagnostic_dict[key](self, G=G, indices=components)
+    if var in diagnostics.diagnostic_dict:
+      return diagnostics.diagnostic_dict[var](self, G=G, indices=components)
+    else:
+      valid = list(diagnostics.diagnostic_dict.keys())
+      raise KeyError(f"'{var}' is not a recognised diagnostic. Valid keys: {valid}")

@@ -1,9 +1,20 @@
 import h5py
 import numpy as np
 
+__all__ = ["write_dump", "write_grid"]
 
-def write_dump():
-  pass
+
+def write_dump(dump, fname):
+  """Write a FluidDump object to an iharm-format HDF5 file.
+
+  :param dump: The fluid dump object
+  :type dump: :class:`harmless.fluid.FluidDump`
+  :param fname: Output filename
+  :type fname: str
+  :raises NotImplementedError: This function is not yet implemented.
+  """
+  raise NotImplementedError("write_dump is not yet implemented.")
+
 
 def write_grid(G, fname):
   """Save the grid object
@@ -22,8 +33,8 @@ def write_grid(G, fname):
   else:
     gfile['X'] = G.r * np.sin(G.th) * np.cos(G.phi)
     gfile['Y'] = G.r * np.sin(G.th) * np.sin(G.phi)
-    gfile['Z'] = G.r * np.sin(G.phi)
-  
+    gfile['Z'] = G.r * np.cos(G.th)
+
   gfile['r']   = G.r
   gfile['th']  = G.th
   gfile['phi'] = G.phi
